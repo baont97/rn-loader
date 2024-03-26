@@ -5,27 +5,31 @@ Display a loader on top of app
 ## Installation
 
 ```sh
-npm install rn-loader
+yarn add rn-loader
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'rn-loader';
+import { LoaderProvider, useLoader } from 'rn-loader';
 
 // ...
+    <LoaderProvider>
+      <HomeScreen />
+    </LoaderProvider>
 
-const result = await multiply(3, 7);
+    const HomeScreen: React.FC = () => {
+      const loader = useLoader();
+    
+      const onPress = () => {
+        loader.show();
+        setTimeout(() => loader.hide(), 3000);
+      };
+    
+      return (
+        <View style={$root}>
+          <Button title="Show modal" onPress={onPress} />
+        </View>
+      );
+    };
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
