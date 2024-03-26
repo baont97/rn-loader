@@ -1,6 +1,6 @@
 {
   "name": "rn-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Display a loader on top of app",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
