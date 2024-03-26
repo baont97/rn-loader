@@ -5,7 +5,7 @@ Display a loader on top of app
 ## Installation
 
 ```sh
-yarn add rn-loader
+yarn add @baont97/rn-loader
 ```
 
 ## Usage
