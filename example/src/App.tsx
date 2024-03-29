@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Button, View, type ViewStyle } from 'react-native';
-import { LoaderProvider, useLoader } from 'rn-loader';
+import { LoaderProvider, useLoader } from '@baont97/rn-loader';
 
 export default function App() {
   return (

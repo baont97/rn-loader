@@ -1,5 +1,5 @@
 {
-  "name": "rn-loader-example",
+  "name": "@baont97/rn-loader-example",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
