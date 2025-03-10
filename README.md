@@ -11,7 +11,7 @@ yarn add @baont97/rn-loader
 ## Usage
 
 ```js
-import { LoaderProvider, useLoader } from 'rn-loader';
+import { LoaderProvider, useLoader, loaderRef } from 'rn-loader';
 
 // ...
     <LoaderProvider>
@@ -22,8 +22,13 @@ import { LoaderProvider, useLoader } from 'rn-loader';
       const loader = useLoader();
     
       const onPress = () => {
+        // use from hook
         loader.show();
         setTimeout(() => loader.hide(), 3000);
+
+        // use from ref
+        loaderRef.current?.show();
+        setTimeout(() => loaderRef.current.hide(), 3000);
       };
     
       return (

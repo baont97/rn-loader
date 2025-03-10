@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Button, View, type ViewStyle } from 'react-native';
-import { LoaderProvider, useLoader } from '@baont97/rn-loader';
+import { LoaderProvider, loaderRef } from '@baont97/rn-loader';
 
 export default function App() {
   return (
@@ -12,11 +12,9 @@ export default function App() {
 }
 
 const HomeScreen: React.FC = () => {
-  const loader = useLoader();
-
   const onPress = () => {
-    loader.show();
-    setTimeout(() => loader.hide(), 3000);
+    loaderRef.current?.show();
+    setTimeout(() => loaderRef.current.hide(), 3000);
   };
 
   return (

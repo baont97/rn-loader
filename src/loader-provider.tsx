@@ -3,6 +3,7 @@ import React, {
   useState,
   useCallback,
   type PropsWithChildren,
+  useImperativeHandle,
 } from 'react';
 import { LoaderContent, type TLoaderContentProps } from './loader-content';
 
@@ -18,6 +19,7 @@ const defaultValue: TLoaderContext = {
   hide: () => {},
 };
 
+export const loaderRef = React.createRef<TLoaderContext>();
 const context = React.createContext<TLoaderContext>(defaultValue);
 const useLoader = () => useContext(context);
 
@@ -33,6 +35,10 @@ const LoaderProvider: React.FC<TLoaderProviderProps> = (props) => {
 
   const show = useCallback(() => setIsVisible(true), []);
   const hide = useCallback(() => setIsVisible(false), []);
+
+  useImperativeHandle(loaderRef, () => ({ show, hide, isVisible }), [
+    isVisible,
+  ]);
 
   return (
     <Provider value={{ isVisible, show, hide }}>
