@@ -108,6 +108,7 @@ const $root: StyleProp<ViewStyle> = [
   {
     alignItems: 'center',
     justifyContent: 'center',
+    zIndex: 9999,
   },
 ];
 
